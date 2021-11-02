@@ -31,3 +31,14 @@ accessibility:
     email: __CONTACT_EMAIL__
     address: __CONTACT_ADDRESS__
 ---
+
+Le rapport de conformité affiche un indicateur sur un « taux » d’accessibilité
+d'une démarche correspondant au référentiel RGAA 4.1. Il permet d’estimer un
+niveau global d’accessibilité des éléments présents sur le site en fonction de
+[13 thématiques distinctes](/rgaa/4.1/criteres/).
+
+En revanche, le rapport de conformité ne permet ni :
+
+- de lister des erreurs de manière différenciée ;
+- de spécifier le caractère bloquant d‘une erreur ;
+- d’indiquer clairement une notion de complexité pour sa résolution.
