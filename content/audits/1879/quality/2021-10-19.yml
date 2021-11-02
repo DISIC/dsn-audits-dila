@@ -1,0 +1,138 @@
+- pages:
+    - name: Toute les pages de la démarche
+      blocks:
+        - name: Console JavaScript
+          errors:
+            - name: logs d'erreur
+              description: |
+                Des logs dans la console JavaScript (avons-nous une version de \"dev\" en prod ?):
+                ```
+                DevTools failed to load source map: Could not load content for https://www.service-public.fr/resources/v-73c770dc07/web/dsfr/css/styles-sp-more.css.map: HTTP error: status code 404, net::ERR_HTTP_RESPONSE_CODE_FAILURE
+                boostrap a11 loaded
+                offcanvas loaded
+                printarea loaded
+                Rivets.js loaded
+                SingleFile is hooking the IntersectionObserver API to detect and load deferred images.
+                lozad loaded
+                User consent for app google-analytics: consent=false
+                GA property id: ga-disable-"UA-58964926-1"
+                User consent for app ab-tasty: consent=false
+                User consent for app streaming-video: consent=false
+                User consent for app reseaux-twitter: consent=false
+                Recaptcha loaded
+                captcha AIFE loaded
+                ```
+        - name: Textes
+          errors:
+            - name: Prononciation étrange par les lecteurs d'écran
+              description:
+                \"ex\" est prononcé \"aix\" par VoiceOver, et pas \"exemple\
+            - name: Prononciation étrange par les lecteurs d'écran
+              description:
+                \"3939\" est prononcé \"Trois mille neuf cent trente-neuf\" et
+                non \"trente-neuf - trente-neuf\
+            - name: (s)
+              description:
+                \"il contient une erreur(s)\" est prononcé \"il contient une
+                erreur *esse*\
+            - name: (s)
+              description:
+                \"JJ/MM/AAAA\" est prononcé \"ji ji emme emme a a a a\"
+        - name: Bugs
+          errors:
+            - name: Vu dans la console JavaScript
+              description:
+                \"Refused to display 'https://psl.service-public.fr/mademarche/recensementCitoyen/rp_iframe' in a frame because it set 'X-Frame-Options' to 'deny'.\"
+      blocks:
+        - name: Connexion FranceConnect
+          errors:
+            - name: Titre h1 "Se connecter"
+              description:
+                \"Se connecter\", alors que plus bas on utilise le terme
+                \"S'identifier\" avec FranceConnect
+            - name: Message d'erreur
+              description:
+                'Parfois, on se connecte via FranceConnect et on obtient ce
+                message : "Un problème est survenu lors de votre navigation.
+                Merci de réessayer ultérieurement."'
+    - name: Formulaire principal
+      blocks:
+        - name: Bandeau cookies
+          errors:
+            - name: Le "bandeau cookies" ne s'affiche pas
+        - name: Menu
+          errors:
+            - name: Bug du menu mobile
+              description: |
+                Le menu ne fonctionne pas en version mobile (l'activation du bouton n'ouvre pas le menu)
+
+                Voici les logs vus dans la console JavaScript :
+                ```
+                main.js?version=1.0.14.3:99 Uncaught TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'.
+                ```
+        - name: Bloc d'erreur rouge pour le contrôle de saisie
+          errors:
+            - name:
+                Message non vocalisé par les lecteurs d'écran (testé avec
+                VoiceOver et Safari)
+              description: |
+                Ces alertes fonctionnent bien lorsque la validation est faite en javascript localement
+                (par exemple, un champ vide) mais le message d'alerte n'est pas vocalisé lorsque la validation
+                a lieu sur le serveur (par exemple pour vérifier si le pays entré comme pays de 2e nationalité
+                est présent dans le référentiel INSEE)
+        - name: Bugs
+          errors:
+            - name: Message d'erreur lorsque la session est expirée
+              description:
+                Le message d'erreur \"Un problème est survenu lors de votre navigation. Merci de réessayer ultérieurement.\" apparait lorsque la session est expirée et que l'on navigue de l'étape 2 à l'étape 1 du formulaire
+        - name: Étapes
+          errors:
+            - name: Après l'étape 5
+              description: |
+                - L'étape \"Envoyer ma demande\" n'est-elle pas une 6e étape ?
+                - De même, la page "Confirmation" derait-elle encore être à l'étape 5 ? Peut-être qu'on pourrait tout simplement enlever les étapes ?"
+    - name: Page Accessibilité
+      blocks:
+        - name: Divers
+          errors:
+            - name: "*underscore*"
+              description:
+                'il y a un *underscore* superflu à la fin de "75342 Paris CEDEX
+                07_"'
+            - name: "espace"
+              description:
+                'il manque un espace avant "4" dans : "Conformément aux
+                dispositions du RGAA4". Ou bien remplacer par "version 4.1"'
+    - name: Page Aide
+      blocks:
+        - name: Divers
+          errors:
+            - name: Il manque un lien
+              description:
+                '"Pour en savoir plus sur la politique et le niveau
+                d''accessibilité du site service-public.fr, visitez la page
+                accessibilité" : un lien aurait pu être pratique sur "visitez la
+                page accessibilité"'
+            - name: Liste de liens
+              description:
+                Le design de la liste de liens ne rend pas évident leur fonction
+                de *lien*
+    - name: Page Récapitulatif (fin du formulaire)
+      blocks:
+        - name: Affichage des informations personnelles
+          errors:
+            - name: Courriel
+              description:
+                "Nul besoin de mettre l'exemple de courriel... \"Courriel (exemple : nom@exemple.com) : yaacov.cohen@prestataire.modernisation.gouv.fr\""
+    - name: Divers
+      blocks:
+        - name: Vu dans le code HTML
+          errors:
+            - name: Commentaires
+              description: "`<!-- TODO : Mettre en place un message d'avertissement cohérent si certains champs n'ont pas été enregistrés -->`"
+            - name: aria-hidden
+              description: "inutile de mettre des `aria-hidden=\"true\"` si le style a `display: none`"
+            - name: aria-hidden
+              description: "les liens \" Se déconnecter\", \" Service en ligne et formulaires\", etc. ont un espace superflu au début de l'intitulé"
+            - name: aria-hidden
+              description: "inuti"
