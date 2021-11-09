@@ -1,0 +1,167 @@
+- pages:
+    - name: Vu sur plusieurs pages
+      blocks:
+        - name: UX
+          errors:
+            - name: Plusieurs étapes en une ?
+              description:
+                Pour de nombtreuses étapes identifiées visuellement (1 à 6) il
+                existe différents écrans qui fonctionnent comme des
+                "sous-étapes". C'est parfois déroutant.
+            - name: A1+A2=Q
+              desctiption: |
+                Il y a quelques endroits dans le formulaire où l'on demande d'entrer un nombre qui doit être égale à la somme de 2 autres ("A1+A2=Q").
+                Ces questions sont certainement reformulables plus simplement. Par exemple, en ne demandant que le 1er nombre A1, le 2e, A2, étant forcément le complément pour arriver à la somme Q)
+                Et sinon, dans le même esprit, ne dervait-on pas vérifier B1+B2=Q ?
+            - name: Textes soulignés qui ne sont pas des liens
+              description:
+                Attention, le soulignement est souvent associé aux liens. Dans
+                de nombreux panneaux d'aide, le soulignement est utilisé pour,
+                semble-t-il, mettre en valeur des portions de phrases. Préférer
+                le gras (par défaut pour les balises `<strong>`) ou l'italique
+                (par défaut pour les balises `<em>`)
+            - name:
+                Au moment d'envoyer sa demande, c'est compliqué de changer
+                d'adresse e-mail (il faut utiliser le bouton *précédent* du
+                navigateur)
+        - name: Textes
+          errors:
+            - name: Prononciation étrange du SIRET par les lecteurs d'écran
+              description: |
+                '"829554........" est prononcé "quatre-vingt deux millions cinq
+                cent cinquante quatre milliard ..." par VoiceOver. Il aurait été
+                préférable d''entendre le SIRET comme une suite de groupe de 3
+                chiffres (SIREN) puis les 5 derniers chiffres séparément.
+                Exemple : "huit-cent vingt-neuf cinq cent cinquante-quatre..."'
+            - name: Prononciation étrange par les lecteurs d'écran
+              description:
+                '"3939" est prononcé "Trois mille neuf cent trente-neuf" et non
+                "trente-neuf - trente-neuf"'
+            - name: (s)
+              description:
+                '"il contient une erreur(s)" est prononcé "il contient une
+                erreur *esse*"'
+            - name: Texte en anglais
+              description:
+                La recherche de rubrique, dans "Nature et volume des activités",
+                aboutit parfois à "no search result"
+            - name: Prononciation étrange pour les extensions de fichier
+              description: notamment ".jpeg"
+        - name: Qualité
+          errors:
+            - name:
+                Comportements étranges au chargement lorsque le réseau internet
+                est lent
+              description: |
+                - certains affichages incorrects à cause du CSS qui tarde à arriver
+                - certaines fontionnalités Javascript inopérantes le temps que les scripts soient téléchargés
+        - name: Console JavaScript
+          errors:
+            - name: logs d'erreur
+              description: |
+                Des logs dans la console JavaScript (avons-nous une version de "dev" en prod ?) :
+                ```
+                14:04:00 [SESSION] LOG checkSession - reste 1639.611 secondes
+                ```
+        - name: Vu dans le code HTML
+          errors:
+            - name: Commentaires
+              description:
+                "`<!-- TODO : Mettre en place un message d'avertissement
+                cohérent si certains champs n'ont pas été enregistrés -->`"
+            - name: aria-hidden
+              description:
+                'inutile de mettre des `aria-hidden="true"` si le style a
+                `display: none`'
+            - name: Intitulés de boutons
+              description:
+                'les liens " Se déconnecter", " Service en ligne et
+                formulaires", etc. ont un espace superflu au début de
+                l''intitulé'
+    - name: Page Contact
+    - name: Page Mentions légales
+    - name: Page Accessibilité
+      blocks:
+        - name: Divers
+          errors:
+            - name: "*underscore*"
+              description:
+                'il y a un *underscore* superflu à la fin de "75342 Paris CEDEX
+                07_"'
+            - name: "espace"
+              description:
+                'il manque un espace avant "4" dans : "Conformément aux
+                dispositions du RGAA4". Ou bien remplacer par "version 4.1"'
+    - name: Page Aide
+    - name: "Étape 1 : Type de déclaration"
+    - name: "Étape 2 : Installation (Choix 1 – Une déclaration initiale)"
+      blocks:
+        - name: Textes
+          errors:
+            - name: Question sans point d'interrogation
+              description:
+                Il manque un point d'interrogation à la fin de la question
+                "L'installation est-elle implantée sur le territoire de
+                plusieurs communes" (ou alors tourner différemment le libellé du
+                champ ; à la forme affirmative par exemple)
+            - name: Faute d'orthographe
+              description:
+                '"Veuillez préciser les noms des communes concernées" au lieu de
+                "Veuillez précisez les noms des communes concernées" ("préciser"
+                avec un ''r'')'
+    - name: "Étape 3 : Activité du site"
+      blocks:
+        - name: Textes
+          errors:
+            - name: Certains textes en anglais
+              description: |
+                1. Le bouton pour fermer la modale : "Close"
+                2. Les résultats de recherche sont vocalisés en anglais :  
+                "Results are: X available, use up and down arrow keys to navigate."
+        - name: Bugs
+          errors:
+            - name: Pas de titre pour les popup de confirmation
+              description: 'Exemple: `confirm("Supprimer la ligne ?")`'
+    - name: "Étape 4 : Mode d'exploitation"
+      blocks:
+        - name: Textes
+          errors:
+            - name:
+                L'intitulé "Tableau des îlots PAC n'est pas affiché (seulement
+                disponible aux technologies d'assistance)"
+            - name: Le format des numéros des îlots n'est pas précisé
+            - name:
+                '"N° des îlots" : mauvaise prononciation de "N°" ("*enne degré*"
+                au lieu de "*numéro*")'
+            - name:
+                Faute d'orthographe dans "Veuillez préciser votre comentaire".
+                Il manque un 'm'
+    - name: "Étape 5 : Pièces justificatives"
+      blocks:
+        - name: Textes
+          errors:
+            - name: '"La pièce jointe ne doit pas être vide." : texte étrange'
+    - name: "Étape 6 : Récapitulatif"
+      blocks:
+        - name: Textes
+          errors:
+            - name: Courriel
+              description:
+                'Nul besoin de mettre l''exemple de courriel... "Courriel
+                (exemple : nom@exemple.com) :
+                yaacov.cohen@prestataire.modernisation.gouv.fr"'
+            - name:
+                point d'interrogation sans espace ("L'installation est-elle
+                implantée sur le territoire de plusieurs communes?")
+            - name:
+                'Attention à l''écriture inclusive "notifié(e)" : le ''e'' est
+                prononcé séparément. Préférer d''autres tournures si possible.'
+        - name: Fin de démarche
+          errors:
+            - name: Question pour le critère 11.12
+              description:
+                'À vérifier "Pour chaque formulaire qui modifie ou supprime des
+                données, ou qui transmet des réponses à un test ou à un examen,
+                ou dont la validation a des conséquences financières ou
+                juridiques, les données saisies peuvent-elles être modifiées,
+                mises à jour ou récupérées par l’utilisateur ?"'
