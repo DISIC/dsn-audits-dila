@@ -1,3 +1,3 @@
 +++
-title = "Recensement citoyen obligatoire"
+title = "Recensement citoyen obligatoire (RCO)"
 +++
