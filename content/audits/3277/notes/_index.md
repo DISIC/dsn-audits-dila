@@ -5,6 +5,18 @@ layout: simple
 kind: page
 ---
 
+# Remarques générales et points bloquants
+
+- Les boutons d'édition (bouton "crayon") ne sont pas accessibles au clavier
+- Certains boutons n'ont pas d'intitulé, ou l'intitulé n'est pas explicite (par
+  exemple : les boutons "éditer" et "supprimer")
+- Les mises à jour de formulaire ne sont pas restituées par les lecteurs d'écran
+  (il manque des attributs `aria-live` par exemple)
+- Les messages de statuts ne sont pas restitués correctement
+- Souvent des composants de formulaires désactivés (checkbox, boutons, champs de
+  saisie) sont utilisés à la place de simples textes qui auraient été plus
+  facilement accessible.
+
 # Notes
 
 ## Amélioration de l'accessibilité
