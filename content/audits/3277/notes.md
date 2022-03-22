@@ -1,11 +1,15 @@
 ---
-description: Notes annexes au rapport d'audit RGAA
-date: 2022-02-16
+title: Notes annexes au rapport d'audit RGAA
+date: "2022-02-16"
 layout: simple
 kind: page
+menu:
+  footer:
+    name: "Notes"
+    weight: 10
 ---
 
-# Remarques générales et points bloquants
+## Remarques générales et points bloquants
 
 - Les boutons d'édition (bouton "crayon") ne sont pas accessibles au clavier
 - Certains boutons n'ont pas d'intitulé, ou l'intitulé n'est pas explicite (par
@@ -17,11 +21,10 @@ kind: page
   saisie) sont utilisés à la place de simples textes qui auraient été plus
   facilement accessible.
 
-# Notes
-
 ## Amélioration de l'accessibilité
 
 - **Général**
+
   - Le lien d'évitement mène au contenu sous l'élément `<main>`, or il existe
     une navigation (`<nav>`) secondaire (la colonne accordéon de gauche) sous
     l'élément `<main>`. Il serait souhaitable que le lien d'évitement aille
@@ -40,6 +43,7 @@ kind: page
       - [_Action sur la démarche_] ajouter un lien d'évitement sous le titre de
         niveau 1 "Assistance aux demandes d'autorisation d'urbanisme" pour
         "sauter" toute la navigation secondaire.
+
 - **Le formulaire à étape (en général)**
 
   - **Amélioration de la navigation de gauche** Ajouter une indication pour
@@ -105,6 +109,10 @@ kind: page
     actuellement" ?
   - Peut-être ajouter un message de statuts lorsqu'un codemandeur est ajouté ?
 
+- **Demande de validation (récapitulatif)**
+  - utilisation de de l'attribut `disabled` sous la forme `disabled="true"` puis
+    `disabled="disabled"`. Utiliser simplement `disabled` partout.
+
 ## Typos
 
 - **1. Lieu des travaux** : placeholder
@@ -119,10 +127,13 @@ kind: page
   - Incohérence entre "si le poids total des pièces jointes ne dépasse pas la
     limite de 100 Mo" et en-dessous : "(20 Mo maxi)"
   - "Pour passer à l’étape suivante, vous devez choisir un `de` types de travaux
-    parmi". Remplacer "`des`" par"`de`".
+    parmi". Remplacer "`des`" par "`de`".
 - **Fin de démarche**
-  - "Informations sur `le consentements`" : . Remplacer "`consentements`"
-    par"`consentement`".
+  - "Informations sur `le consentements`" : . Remplacer "`consentements`" par"
+    `consentement`".
+  - Enlever la virgule dans la phrase "Ce numéro est généré à chaque demande de
+    validation, (le numéro est identique pour tous les autres demandeurs et
+    architecte)".
 
 ## UX / UI
 
@@ -179,12 +190,14 @@ transmis automatiquement_
   - sous "Informations obligatoires"
 
 - **3. Dossier** :
+
   - l'accès à un bouton RÉCAPITULATIF dès le départ est un peu étrange.
     Peut-être un problème de nommage ?
   - libellé "Date de naissance" OK. Pourquoi mettre des parenthèses aux libellés
     de champs suivants ? ("Pays (de naissance)", "Commune (de naissance)",…)
   - Étape "construction". Que faut-il mettre dans le champs "Nature des autres
     financements publics" ? Peut-être ajouter une aide ici ?
+
 - **Demande de validation (récapitulatif)** :
   - les boutons "Modifier" ne seraient-ils pas mieux placés sous les
     informations correspondantes plutôt qu'au-dessus ?
