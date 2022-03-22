@@ -1,14 +1,3 @@
----
-title: Notes annexes au rapport d'audit RGAA
-date: "2022-02-16"
-layout: simple
-kind: page
-menu:
-  footer:
-    name: "Notes"
-    weight: 10
----
-
 ## Remarques générales et points bloquants
 
 - Les boutons d'édition (bouton "crayon") ne sont pas accessibles au clavier

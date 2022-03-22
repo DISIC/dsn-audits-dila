@@ -9,6 +9,7 @@ path = 'github.com/disic/frago'
 
 [outputs]
  home    = ["HTML","JSON"]
+ page    = ["HTML","JSON","declaration","declarationpage","accessibility","accessibilitypage","quality","qualitypage","performance","performancepage"]
 
 [params]
   organisation = "DILA"
