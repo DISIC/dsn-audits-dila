@@ -14,6 +14,45 @@
 
 - **Général**
 
+  - Par critères :
+
+    - **1.8** : "République Française" pourrait être écrit avec du texte (cf.
+      DSFR)|L'image du label e-accessible est floue. Préférez l'utilisation de
+      textes stylisés ou d'un SVG.
+
+    - **6.1** (page "Type de travaux") : Le titre (`title`) "(Notice explicative
+      pour les demandes de permis de construire, permis d’aménager, permis de
+      démolir et déclaration préalable) - Nouvelle fenêtre" gagnerait à être
+      affiché autrement que sur le `title`
+
+    - **8.2** (pages à partir de "Type de travaux" jusqu'à la fin) : Supprimer
+      un `aria-hidden` superflu dans la balise
+      `<input aria-hidden="true" id="demarche-release" type="hidden" disabled="disabled" value="2.0.0-RELEASE">`
+
+    - **8.6** (page "Type de travaux") : Plutôt que "Guidage", peut-être
+      préciser : "Mode guidé: Maison neuve" ?
+
+    - **8.9** : Dans le footer, les titres de listes de liens présentés sous
+      forme de colonnes sont des éléments `<p>` alors qu'ils ne correspondent
+      pas vraiment à des paragraphes.
+
+    - **10.3** (page "Type de travaux") : Lorsque les styles sont désactivés, la
+      carte pose des problèmes de compréhension et de défilement à la souris.
+
+    - **10.7** : Attention le coutour du focus cache parfois légèrement le texte
+      en dessous sur les bords extérieurs (gauche et droite)
+
+    - **11.2** (page "Type de travaux") : Veuillez saisir le nom de la commune
+      (exemple : Paris)" est peut-être incomplet car on peut aussi entrer un
+      code postal|"N° de parcelle" est vocalisé "N degré de parcelle" au lieu de
+      "Numéro de parcelle" (VoiceOver)
+
+    - **11.11** (page "Lieu des travaux") : Les suggestions pour les champs
+      obligatoires manquants pourraient être plus précises et indiquer le format
+      attendu (par exemple : "Veuillez renseigner la section de la parcelle de
+      travaux (2 caractères)" au lieu de "Veuillez renseigner la section de la
+      parcelle de travaux."
+
   - Le lien d'évitement mène au contenu sous l'élément `<main>`, or il existe
     une navigation (`<nav>`) secondaire (la colonne accordéon de gauche) sous
     l'élément `<main>`. Il serait souhaitable que le lien d'évitement aille
@@ -109,8 +148,7 @@
   ("rechercher votre saisissez"…)
 - **2. Types de travaux** :
   - "`un de types de travaux`"
-  - "`La règle Silence vaut accord" s'applique`" : le guillement semble mal
-    placé
+  - "`La règle Silence vaut accord" s'applique`" : le guillemet semble mal placé
 - **3.Dossier | Liste des pièces à joindre** :
   - "Vous êtes invité" au lieu de "Vous êtes invités"
   - Incohérence entre "si le poids total des pièces jointes ne dépasse pas la
