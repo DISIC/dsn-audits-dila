@@ -292,6 +292,18 @@ transmis automatiquement_
 
 ## Éditorial
 
+- **Le formulaire à étape (en général)**
+
+  - Lorsque JavaScript est désactivé, un message d'avertissement apparait en
+    haut de la page : "Javascript est désactivé dans votre navigateur.".
+    Attention, le grand public ne comprend peut-être pas le mot "JavaScript". Il
+    faudrait un message plus explicite, par exemple, suggérer à l'utilisateur
+    d'activer JavaScript en expliquant ce que c'est et comment le faire, ou en
+    détectant que le navigateur est peut-être ancien et dans ce cas suggérer
+    d'utiliser un navigateur plus moderne. Lien intéressant à ce sujet :
+    [Everyone has JavaScript,
+    right?](<https://kryogenix.org/code/browser/everyonehasjs.htm>
+
 - **2. Types de travaux | Maison neuve**
   - _"Quel est le nombre de logement(s) créé(s) ?"_ Le verbe "créer" est-il
     adapté ici ? --> "combien de maisons prévoyez-vous de construire ?"
