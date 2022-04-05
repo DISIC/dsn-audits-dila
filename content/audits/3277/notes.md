@@ -78,6 +78,7 @@
     l'étape courante. --> dans le code (`aria-current="step"`). Voir
     [MDN: aria-current](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-current)
     --> visuellement par l'ajout de style particulier pour l'étape courante
+
   - **Message d'attente "Merci de patienter…"** Cf. article
     [Accessible Loading Indicators—with No Extra Elements!](https://dockyard.com/blog/2020/03/02/accessible-loading-indicatorswith-no-extra-elements)
 
@@ -100,7 +101,14 @@
     ```
 
   - **Imprécisions de textes**
+
     - **N°** N° est lu "N degré" par VoiceOver au lieu de "numéro"
+
+  - Le bouton "Documents d'urbanisme [zip]" devrait mentionner le poids du
+    fichier (plus de 600 Mo !).
+
+  - Les "Date Pickers" ne sont pas accessibles au clavier. Voir
+    [Date Picker Dialog Example](https://www.w3.org/TR/wai-aria-practices-1.1/examples/dialog-modal/datepicker-dialog.html).
 
 - **2. Types de travaux** : le bouton **VALIDER** ne devrait pas être écrit en
   majuscule (utiliser CSS)
@@ -140,6 +148,10 @@
 - **Demande de validation (récapitulatif)**
   - utilisation de de l'attribut `disabled` sous la forme `disabled="true"` puis
     `disabled="disabled"`. Utiliser simplement `disabled` partout.
+  - nc|le lien "DEMANDER À ÊTRE RAPPELÉ(E)" n'est pas explicite car il ouvre une
+    nouvelle fenêtre. Ajouter un attribut `title="Demander un rappel
+    téléphonique - Nouvelle fenêtre". Question par ailleurs : le service est-il
+    adapté au sourds et malentendants ?
 
 ## Typos
 
@@ -224,6 +236,10 @@ transmis automatiquement_
     de champs suivants ? ("Pays (de naissance)", "Commune (de naissance)",…)
   - Étape "construction". Que faut-il mettre dans le champs "Nature des autres
     financements publics" ? Peut-être ajouter une aide ici ?
+  - Liste des pièces à joindre : plutôt que de séparer l'information en 2, par
+    exemple "Un plan de situation du terrain" et "J'ai bien la pièce", peut-être
+    simplifier en un champ unique, par exemple "J'ai bien la pièce suivante :
+    plan de situation du terrain".
 
 - **Demande de validation (récapitulatif)** :
   - les boutons "Modifier" ne seraient-ils pas mieux placés sous les
