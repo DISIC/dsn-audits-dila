@@ -1,0 +1,266 @@
+- pages:
+    - name: "Global au site"
+      blocks:
+        - name: Page
+          errors:
+            - name: Intitulés incorrects
+              description: |
+                Certains titres de niveau 3 sont un mélange de titre valide et d'intitulé de bouton adjacent.
+                Certaines étiquettes de champs de saisie sont un mélange d'étiquette valide et d'intitulé de
+                bouton d'aide adjacent
+
+                **Recommandation** :  
+                Utiliser une autre technique que la police "AdobeBlank" pour cacher
+                les textes "Information complémentaire sur le motif de la demande" et
+                "Information complémentaire sur la commune concernée par l'acte"
+              criterion: 9.1, 11.2
+              delivery: Mineur
+              status: moindre
+        - name: Message de statut en haut de la page
+          errors:
+            - name: |
+                Bouton "Fermer" :  
+                Contraste insuffisant
+              path: //*[@id="buttonClose-alert-sauv0"]/span
+              description: |
+                Le bouton "Fermer" (un caractère "X", par exemple `id="buttonClose-alert-sauv0"`)
+                pour fermer le message de statut apparaissant en haut de la page
+                n'est pas assez contrasté à cause de son opacité à 0.2.
+                Le ratio de contraste avec le fond du bandeau de statut est de 1.6.
+
+                **Recommandation** :  
+                Augmenter l'opacité du bouton "Fermer" ("X")
+                pour atteindre un contraste suffisant.
+              criterion: 3.2
+              delivery: Mineur
+              status: important
+
+            - name: Code invalide
+              description: |
+                Le code comporte des erreurs quand on passe le validateur :
+                https://validator.w3.org/. Notamment le composant XITI
+                (`type="undefined"`, `id=""`, etc.)
+
+                **Recommandation** :  
+                Corriger le code source pour qu'il soit
+                valide.
+              criterion: 8.2
+              delivery: Mineur
+              status: moindre # Criticité : critique, important, moindre
+
+            - name: |
+                Langue par défaut : "en"
+              description: |
+                La langue par défaut est "en" au lieu de "fr"
+
+                **Recommandation** :  
+                Changer l'attribut `lang="en"` en `lang="fr"` dans la balise `<html>`
+              criterion: 8.2
+              delivery: Majeur
+              status: important
+
+    - name: Rechercher commune
+      blocks:
+        - name: Motif de la demande
+          errors:
+            - name: Typo
+              path: //*[@id="help_rechercherCommune"]/p
+              description: |
+                l'URL "http://vosdroits.service-public.fr/particuliers/N359.xhtml"
+                devrait peut-être être remplacée par une adresse en https au lieu
+                de http, pour rassurer l'usager sur le caractère sécurisé du lien
+                (peut-être directement "https://www.service-public.fr/particuliers/vosdroits/N359" ?)
+              delivery: Notes annexes
+              status: moindre
+
+    - name: Identification
+      blocks:
+        - name: |
+            Titres "Identification 1/2" et "Identification 2/2"
+          errors:
+            - name: |
+                Restitution ambigue par VoiceOver
+              path: //*[@id="main"]/div/div[3]/form/h2
+              description: |
+                "Identification 1/2" est prononcé "Identification 1 2" par VoiceOver
+                (le "/" n'est pas vocalisé)
+
+                **Recommandation** :  
+                Utiliser le code HTML suivant :
+                ```html
+                Identification 1<span aria-hidden="true">/</span>
+                <span class="sr-only"> sur </span>
+                2
+                ```
+              delivery: Notes annexes
+              status: moindre
+            - name: |
+                Restitution ambigue par VoiceOver
+              path: //*[@id="main"]/div/div[3]/form/h2
+              description: |
+                "Identification 1/2" est prononcé "Identification 1 2" par VoiceOver
+                (le "/" n'est pas vocalisé)
+
+                **Recommandation** :  
+                Utiliser le code HTML suivant :
+                ```html
+                Identification 1<span aria-hidden="true">/</span>
+                <span class="sr-only"> sur </span>
+                2
+                ```
+              delivery: Notes annexes
+              status: moindre
+            - name: |
+                Restitution d'un message ambigu uniquement aux aides techniques
+              path: //*[@id="main"]/div/div[3]/form/div[8]/div/div[1]/div/div/div/div[1]/div/label/span[2]
+              description: |
+                Le message "saisie complémentaire - affichage automatique" est caché
+                et restitué uniquement aux aides techniques lorsque le curseur de
+                lecteur d'écran passe dessus.
+                Ce message n'est pas suffisemment clair.
+
+                **Recommandation** :  
+                Peut-être ajouter un message plus explicite, toujours "sr-only",
+                en suffixe de l'intitulé de la case à cocher.  
+                Par exemple :
+                ```html
+                Filiation inconnue<span class="sr-only">. Si la filiation est connue,
+                une saisie complémentaire est demandée ci-après</span>
+                ```
+              delivery: Notes annexes
+              status: moindre
+        - name: Identité de la 1ère personne faisant l'objet de la demande
+          errors:
+            - name: |
+                Pré-remplissage du champ "Code postal"
+              path: //*[@id="inputIdentitelocaliteCP_identitePersonne"]
+              description: |
+                Le champ est pré-rempli uniquement avec la ville.
+
+                **Recommandation** :  
+                Si possible préremplir le champ avec le code postal + la ville (au lieu de juste la ville)
+              delivery: Notes annexes
+              status: moindre
+        - name: Identité de la 2ème personne faisant l'objet de la demande
+          errors:
+            - name: |
+                Champ "Code postal / Commune de naissance" qui affiche une loupe mais la recherche est désactivée
+              path: //*[@id="inputIdentitelocaliteCP_identite2personne"]
+              description: |
+                La fonctionnalité de recherche semble bogguée sur ce champ.
+                Il semblerait que la recherche ne soit pas activée pour les pays étrangers.
+
+                **Recommandation** :  
+                Retirer la loupe pour les cas où la recherche n'est pas activée (pays de naissance à l'étranger)
+              delivery: Notes annexes
+              status: moindre
+        - name: |
+            Boite postale / lieu-dit
+          errors:
+            - name: |
+                Restitution d'un message uniquement aux aides techniques
+              path: //*[@id="main"]/div/div[3]/form/div[3]/div[2]/div/div/p
+              description: |
+                Sur la page "Identification 2/2" Le message "Le champ Boite postale / lieu-dit est maintenant optionnel."
+                n'est restitué qu'aux aides techniques. Il n'est pas affiché visuellement.
+
+                **Recommandation** :  
+                Supprimer ce message qui n'est peut-être pas utile,
+                ou bien le gérer comme un message de statut visible.
+              delivery: Notes annexes
+              status: moindre
+
+    - name: Récapitulatif et envoi
+      blocks:
+        - name: |
+            Bandeau d'étape (étape 4)
+          errors:
+            - name: |
+                Étape 4 ignorée par les technologies d'assistance
+              path: //*[@id="main"]/div/div[1]/ol/li[4]
+              description: |
+                Visuellement c'est bien l'étape 4 qui est l'étape courante.
+                Mais un attribut `aria-hidden="true"` empêche la restitution de l'étape courante aux technologies d'assistance.  
+                À noter : les précédentes étapes sont correctement restituées.
+
+                **Recommandation** :  
+                Éviter d'ajouter l'attribut `aria-hidden="true"` sur l'élément de l'étape 4
+                lorsque l'usager est sur le point d'envoyer sa demande.
+              criterion: 10.8
+              delivery: Mineur
+              status: moindre
+        - name: |
+            Page
+          errors:
+            - name: |
+                Format mobile : textes tronqués
+              path: //*[@id="main"]/div/div[3]/form/h2
+              description: |
+                Format mobile (320px) : certains textes sont tronqués sur la gauche.
+
+                **Recommandation** :  
+                Revoir les styles CSS, notamment autour des marges négatives
+              criterion: 10.11
+              delivery: Mineur
+              status: moindre
+
+    - name: Fin de démarche
+      blocks:
+        - name: |
+            Texte d'introduction
+          errors:
+            - name: |
+                Restitution vocale (VoiceOver) compliquée
+              path: //*[@id="main"]/div/div[3]/div/div/div/div[2]/p[1]
+              description: |
+                Dans le passage de texte "au(x) service(s) concerné(s) par votre démarche",
+                la présence des parenthèses rend la restitution vocale difficile à comprendre
+
+                **Recommandation** :  
+                Si c'est possible, enlever les parenthèses
+              delivery: Notes annexes
+              status: moindre
+        - name: |
+            Bouton "Envoi par courriel"
+          errors:
+            - name: |
+                Bouton sous forme de lien
+              description: |
+                Le bouton "Envoi par courriel" ressemble à un lien. Pour plus de consistence,
+                il serait préférable que ce bouton prenne la forme d'un bouton et non d'un lien.
+
+                **Recommandation** :  
+                Modifier le style CSS pour rendre tous les boutons similaires,
+                avec une apparence différente des liens.
+              delivery: Notes annexes
+              status: moindre
+        - name: |
+            Votre avis nous intéresse
+          errors:
+            - name: |
+                Balise `<br>` utilisée uniquement à des fins de présentation
+              path: //*[@id="main"]/div/div[3]/div/div/div/div[2]/div[1]/p[1]/br[1]
+              description: |
+                Une balise `<br>` sert uniquement à créer un espace sur le haut du paragraphe
+                commençant par "Votre avis nous intéresse"
+
+                **Recommandation** :  
+                Gérer cet espace avec un style CSS `padding-top` sur le paragraphe.
+              criterion: 8.9
+              delivery: Mineur
+              status: moindre
+        - name: |
+            Lien-bouton "Télécharger ActeEtatCivil-PDF.pdf"
+          errors:
+            - name: |
+                Format mobile : intitulé tronqué
+              path: //*[@id="main"]/div/div[3]/div/div/div/div[2]/div[4]/div/form/a/span[1]
+              description: |
+                Format mobile (320px) : l'intitulé du lien-bouton "Télécharger ActeEtatCivil-PDF.pdf"
+                est tronqué sur la droite
+
+                **Recommandation** :  
+                Revoir le style CSS associé au bouton ()
+              criterion: 10.11
+              delivery: Mineur
+              status: moindre
